@@ -8,19 +8,18 @@ A modern office management solution designed to streamline workflows, boost prod
 
 ```
 Office-2024/
-├── Configuration.xml
+├── bin
+│   ├── Configuration.xml
+│   └── setup.exe
 ├── Office-2019-Activation-Issue-fix.bat
 ├── README.md
-├── officedeploymenttool_18526-20146.exe
-├── setup.bat
-└── setup.exe
+└── setup.bat
 ```
 
-- **Configuration.xml**: Main deployment configuration file (see below).
-- **setup.exe**: Microsoft Office Deployment Tool executable.
+- **bin/Configuration.xml**: Main deployment configuration file (see below).
+- **bin/setup.exe**: Microsoft Office Deployment Tool executable.
 - **setup.bat**: Batch script to automate installation.
 - **Office-2019-Activation-Issue-fix.bat**: Activation helper script.
-- **officedeploymenttool_18526-20146.exe**: Deployment tool installer.
 
 ---
 
@@ -36,7 +35,7 @@ Office-2024/
 
 ## ✅ **Included Products**
 
-The following Microsoft Office products are included by default. You can customize which products are installed by editing the `Configuration.xml` file (see [How to Change Included Products](#how-to-change-included-products)).
+The following Microsoft Office products are included by default. You can customize which products are installed by editing the `bin/Configuration.xml` file (see [How to Change Included Products](#how-to-change-included-products)).
 
 1. ### **Office Professional Plus 2024 Volume License**
   - **Product ID:** `ProPlus2024Volume`
@@ -96,7 +95,7 @@ The following Microsoft Office products are included by default. You can customi
 
 To customize which Office products are installed:
 
-1. **Open `Configuration.xml`** in the root directory.
+1. **Open `bin/Configuration.xml`** in the `bin` directory.
 2. Locate the `<Product>` elements. Each product is defined as:
   ```xml
   <Product ID="ProPlus2024Volume" PIDKEY="XJ2XN-FW8RK-P4HMP-DKDBV-GCVGB">
@@ -123,12 +122,12 @@ For a full list of available Product IDs and Language IDs, see the [Microsoft Of
   ```
 
 2. **Edit the configuration (optional):**
-  - To change included products or languages, edit `Configuration.xml` as described above.
+  - To change included products or languages, edit `bin/Configuration.xml` as described above.
 
 3. **Install the application:**
   - Open CMD, PowerShell, or Terminal as an administrator and run:
     ```bash
-    setup.exe /configure ./Configuration.xml
+    bin/setup.exe /configure ./bin/Configuration.xml
     ```
   - Alternatively, you can execute the `setup.bat` file:
     ```bash
